@@ -9,7 +9,7 @@ import pic1 from "../images/002.jpg"
 import pic2 from "../images/003.jpg"
 import pic3 from "../images/004.jpg"
 
-const picArray = [pic0, pic1, pic2, ""]
+const picArray = [pic0, pic1, pic2]
 
 function IndexPage() {
   const [count, setCount] = useState(0)
@@ -17,17 +17,18 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Home" />
-      <h3>I made this for you as a birthday card</h3>
-      <h3>I love you!!!!</h3>
+      <div className="text">I made this for you as a birthday card</div>
+      <div className="text">I love you!!!!</div>
       <div className="card">
         <div className="text">
           To a Mom who is always there no matter the cost
         </div>
+        <div>Click me</div>
         <img
           className={picClass}
           src={picArray[count]}
           onClick={() => {
-            if (count > 2) {
+            if (count > 1) {
               setCount(0)
               setPicClass("pic")
             } else {
